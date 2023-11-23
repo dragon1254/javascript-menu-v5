@@ -1,10 +1,10 @@
-const { default: controller } = require("./domain/controller/controller");
+import controller from "./domain/controller/controller";
 
 class App {
   async play() {
-	const control = new controller()
+	const control = new controller();
 	await control.run();
   }
 }
-
-module.exports = App;
+export default App;
+// module.exports = App;

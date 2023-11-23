@@ -53,6 +53,9 @@ class controller{
         const makeMenuCategory = new makeCategory()
         const getCategoryArray = makeMenuCategory.getCategory();
         this.#menuCategoryArray = getCategoryArray;
+        console.log(this.#couchNames)
+        console.log(this.#menuCategoryArray)
+        console.log(this.#notMenuObject)
     }
 }
 

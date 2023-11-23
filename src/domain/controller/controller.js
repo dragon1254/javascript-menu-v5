@@ -1,3 +1,5 @@
+import SAMPLE from "../model/constant/menu";
+import makeCategory from "../model/util/makeCategory";
 import menuValidate from "../model/validate/menuValidate";
 import nameValidate from "../model/validate/nameValidate";
 import inputView from "../view/inputView";
@@ -7,12 +9,15 @@ class controller{
 
 #notMenuObject = {}
 
+#menuCategoryArray
+
     constructor(){
 
     }
 
     async run(){
         await this.inputName();
+        this.menuCategory();
     }
 
     async inputName(){
@@ -43,6 +48,11 @@ class controller{
                 return await this.cannotEat();
             }
         })
+    }
+    menuCategory(){
+        const makeMenuCategory = new makeCategory()
+        const getCategoryArray = makeMenuCategory.getCategory();
+        this.#menuCategoryArray = getCategoryArray;
     }
 }
 

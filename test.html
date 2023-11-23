@@ -29,6 +29,12 @@ if(SAMPLE_ARRAY[0].includes(menu)){
     console.log(menu)
 }
         }
+        function reduce(){
+            let temporaryArray = [0,1,2,3,3]
+            let temporaryNumber = 3
+            let count = temporaryArray.reduce((cnt, element) => cnt + (temporaryNumber === element), 0);;
+  console.log(count);
+        }
     </script>
 </body>
 </html>

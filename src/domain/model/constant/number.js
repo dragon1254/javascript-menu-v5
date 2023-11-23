@@ -4,6 +4,7 @@ const number = {
     minCouchNumber : 2,
     maxCouchNumber : 5,
     maxNotMenu : 2,
+    weekday : 5
 }
 
 export default number;

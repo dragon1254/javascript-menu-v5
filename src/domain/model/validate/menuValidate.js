@@ -15,14 +15,14 @@ class menuValidate{
         }
         this.allMenuCheck(notMenuArray)
     }
-    
+
     allMenuCheck(notMenuArray){
         const makeMenuArray = Object.values(SAMPLE);
-        let menuArray = []
-        makeMenuArray.forEach(element => {
-            let allMenu = element.split(', ')
-            menuArray.push(...allMenu)
-        });
+        let menuArray = makeMenuArray.join();
+        // makeMenuArray.forEach(element => {
+        //     let allMenu = element.split(', ')
+        //     menuArray.push(...allMenu)
+        // });
         notMenuArray.forEach(element => {
             if(!menuArray.includes(element)){
                 throw new Error(error.notIncludeMenu);

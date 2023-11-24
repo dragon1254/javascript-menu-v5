@@ -8,6 +8,11 @@
 <body>
     <script>
         function check(element){
+            const str = '1,2,3';
+            const arrayStr = str.split(',').map(Number)
+            console.log(arrayStr);
+            //[1, 2, 3]
+            
             let array = element.split(',')
             console.log(array);
             console.log(array.length);
@@ -22,8 +27,11 @@
 	양식: '라자냐, 그라탱, 뇨끼, 끼슈, 프렌치 토스트, 바게트, 스파게티, 피자, 파니니',
 };
 const SAMPLE_ARRAY = Object.values(SAMPLE)
+const menuArray = SAMPLE_ARRAY.join()
 console.log(SAMPLE_ARRAY)
 console.log([...SAMPLE_ARRAY])
+console.log(menuArray)
+console.log(typeof(menuArray))
 if(SAMPLE_ARRAY[0].includes(menu)){
     console.log(menu)
 }

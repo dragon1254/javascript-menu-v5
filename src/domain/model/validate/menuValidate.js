@@ -4,20 +4,31 @@ import number from "../constant/number";
 
 class menuValidate{
     menuCheck(notMenu){
-        const notMenuArray = notMenu.spilt(',')
+        let notMenuArray = []
+        if(notMenu.includes(',')){
+            notMenuArray = notMenu.spilt(',')
+        } else if(!notMenu.includes(',')){
+            notMenuArray.push(notMenu)
+        }
         if (notMenuArray.length > number.maxNotMenu) {
             throw new Error(error.moreMaxNotMenu)
         }
-        const menuArray = Object.values(SAMPLE);
-        menuArray.forEach(element => {
-            if(notMenu!=='' && !element.includes(notMenuArray[0])) {
-                throw new Error(error.notIncludeMenu)
-            }
-            if(!element.includes(notMenuArray[1])) {
-                throw new Error(error.notIncludeMenu)
-            }
-
+        this.allMenuCheck(notMenuArray)
+    }
+    
+    allMenuCheck(notMenuArray){
+        const makeMenuArray = Object.values(SAMPLE);
+        let menuArray = []
+        makeMenuArray.forEach(element => {
+            let allMenu = element.split(', ')
+            menuArray.push(...allMenu)
         });
+        notMenuArray.forEach(element => {
+            if(!menuArray.includes(element)){
+                throw new Error(error.notIncludeMenu);
+            }
+        });
+
     }
 }
 

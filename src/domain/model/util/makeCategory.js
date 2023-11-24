@@ -1,5 +1,5 @@
 import SAMPLE from "../constant/menu";
-import { MissionUtils } from '@woowacourse/mission-utils'
+import { MissionUtils, Random } from '@woowacourse/mission-utils'
 import number from "../constant/number";
 
 class makeCategory{
@@ -12,7 +12,7 @@ class makeCategory{
         const temporaryArray = [];
         const categoryArray = []
         while(temporaryArray.length < number.weekday){
-            const temporaryNumber = MissionUtils.Randoms.pickNumberInRange(1, 5) - 1;
+            const temporaryNumber = Random.pickNumberInRange(1, 5) - 1;
             this.categoryDuplication(temporaryArray,temporaryNumber)
         }
         temporaryArray.forEach(element => {

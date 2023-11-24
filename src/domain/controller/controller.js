@@ -41,8 +41,9 @@ class controller{
         await inputView.inputNotMenu(element,async (notMenu)=>{
             try{
                 const validateMenu = new menuValidate();
-                validateMenu.menuCheck(notMenu);
-                this.#notMenuObject[element] = notMenu;
+                const getNotMenu = notMenu
+                validateMenu.menuCheck(getNotMenu);
+                this.#notMenuObject[element] = getNotMenu;
             } catch(err){
                 console.log(err)
                 return await this.cannotEat();

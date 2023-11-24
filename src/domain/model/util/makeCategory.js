@@ -6,19 +6,21 @@ class makeCategory{
     
     getCategory(){
         /*배열길이가 5가 될때까지 반복
+        매 반복마다 랜덤값 하나 받아서 확인하고 잘 맞으면(2개 이상이 아니면)
+        그 값을 index 삼아서 객체에 메뉴의 key[index]를 key로, 메뉴의 value[index]를 value로 값 추가
         배열 길이가 5가 되면 빠져나와서 배열의 값을 categories의 index로 하여 최종 카테고리 배열 만듦*/
         
         const categories = Object.keys(SAMPLE);
+        const categoryMenu = Object.values(SAMPLE);
         const temporaryArray = [];
-        const categoryArray = []
+        const categoryObject = {}
         while(temporaryArray.length < number.weekday){
             const temporaryNumber = Random.pickNumberInRange(1, 5) - 1;
             this.categoryDuplication(temporaryArray,temporaryNumber)
-        }
-        temporaryArray.forEach(element => {
-            categoryArray.push(categories[element]);
-        });
-        return categoryArray;
+            const categoryMenuArray = categoryMenu[temporaryNumber].split(', ')
+            categoryObject[categories[temporaryNumber]] = categoryMenuArray;
+        }        
+        return categoryObject;
     }
 
     /*0,4 사이의 숫자룰 받아와서 array에 이미 포함되어 있으면 1개일 때만 array에 푸시

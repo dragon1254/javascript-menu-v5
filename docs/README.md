@@ -74,3 +74,11 @@
 - 그렇게 되면 사실 좀 더 깔끔한 코딩이 가능함(readLine이 아니라 readLineAsync을 쓸 수 있기 때문에)
 
 - 생각 좀 하고 다시 해야 할듯
+
+#### 해결
+
+- 5기할때는 npm 쪽이 달라서 못 받아오는듯 : import 해석 못함(node 14와 문법 달라진듯)
+
+- 6기 쪽으로 하여 package 변경하여 import 해석할 수 있게 변환. ApplicationTest도 맞게 수정
+
+- readLineAsync은 안 씀. 일단 기존 틀 내에서 구현할 수 있게, 저것은 test2때나 해 볼 예정
